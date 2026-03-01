@@ -69,11 +69,11 @@ export default function Playground() {
           A 3x3 dot-grid loader for React. 36 patterns, 20 colors, under 5KB.
         </p>
         <button
-          className="mt-6 inline-flex items-center gap-2 font-mono text-[13px] text-zinc-500 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 cursor-pointer px-5 py-2.5 transition-colors hover:border-zinc-950 dark:hover:border-zinc-50"
+          className="mt-6 inline-flex items-center gap-2 font-mono text-[13px] text-white dark:text-black dark:bg-zinc-100 bg-zinc-900 border dark:border-zinc-200 border-zinc-800 cursor-pointer px-5 py-2.5 transition-colors dark:hover:border-zinc-950 hover:border-zinc-50"
           onClick={() => handleCopy('npm install lumidot', 'install')}
         >
           <span>npm install lumidot</span>
-          <span className="text-sm text-zinc-400">{copied === 'install' ? '✓' : '⎘'}</span>
+          <span className="text-sm text-white dark:text-black">{copied === 'install' ? '✓' : '⎘'}</span>
         </button>
       </section>
 
