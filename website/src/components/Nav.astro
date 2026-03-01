@@ -1,0 +1,67 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+const isHome = currentPath === '/';
+import NavLogo from './NavLogo';
+---
+
+<nav class="fixed top-0 left-0 right-0 h-12 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 z-50 flex items-center transition-colors">
+  <div class="w-full max-w-4xl mx-auto px-6 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-mono text-sm font-semibold text-zinc-950 dark:text-zinc-50 tracking-tight">
+      <NavLogo client:load />
+      <span>lumidot</span>
+    </a>
+    <div class="flex items-center gap-6">
+      <a
+        href="/docs/getting-started"
+        class:list={[
+          'text-[13px] font-medium transition-colors',
+          currentPath.startsWith('/docs')
+            ? 'text-zinc-950 dark:text-zinc-50'
+            : 'text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-50',
+        ]}
+      >
+        Docs
+      </a>
+      <a
+        href="https://github.com/zainzafar90/lumidot"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[13px] font-medium text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-50 transition-colors"
+      >
+        GitHub
+      </a>
+      <button
+        id="theme-toggle"
+        class="font-mono text-[10px] px-2.5 py-1 border border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-500 cursor-pointer transition-all tracking-wider uppercase hover:border-zinc-950 hover:text-zinc-950 dark:hover:border-zinc-50 dark:hover:text-zinc-50"
+      >
+        Light
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    function update() {
+      var isDark = document.documentElement.classList.contains('dark');
+      btn.textContent = isDark ? 'Light' : 'Dark';
+    }
+    update();
+    btn.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      update();
+    });
+  })();
+</script>

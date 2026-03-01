@@ -1,0 +1,28 @@
+---
+import Layout from './layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import DocsSidebar from '../components/DocsSidebar.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Lumidot' } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<Layout title={`${title} – Lumidot`}>
+  <Nav currentPath={currentPath} />
+  <div class="pt-12 min-h-screen bg-white dark:bg-zinc-950">
+    <div class="max-w-4xl mx-auto flex">
+      <DocsSidebar currentPath={currentPath} />
+      <main class="flex-1 min-w-0 px-6 py-10 sm:px-8 lg:px-12">
+      <article class="prose prose-zinc dark:prose-invert max-w-none prose-headings:font-mono prose-headings:tracking-tight">
+        <slot />
+      </article>
+    </main>
+    </div>
+  </div>
+  <Footer />
+</Layout>

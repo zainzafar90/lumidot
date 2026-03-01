@@ -1,0 +1,88 @@
+---
+import DocsLayout from '../../layouts/docs-layout.astro';
+---
+
+<DocsLayout title="Lumidot">
+  <h1>Lumidot</h1>
+  <p>A 3x3 dot-grid loader with named patterns, color variants, directional wave animation, and glow effects.</p>
+
+  <h2>Basic Usage</h2>
+  <pre><code>{`import { Lumidot } from 'lumidot';
+
+<Lumidot />`}</code></pre>
+
+  <h2>Patterns</h2>
+  <p>Control which dots are active in the 3x3 grid. 36 named patterns are available.</p>
+  <pre><code>{`<Lumidot pattern="all" />
+<Lumidot pattern="frame" />
+<Lumidot pattern="corners-only" />
+<Lumidot pattern="plus-hollow" />
+<Lumidot pattern="line-diag-1" />
+<Lumidot pattern="solo-center" />`}</code></pre>
+
+  <h2>Color Variants</h2>
+  <p>20 named color variants from the Tailwind palette.</p>
+  <pre><code>{`<Lumidot variant="blue" />
+<Lumidot variant="purple" />
+<Lumidot variant="rose" />
+<Lumidot variant="amber" />
+<Lumidot variant="white" />`}</code></pre>
+
+  <h2>Direction</h2>
+  <p>Control the wave animation direction across the grid.</p>
+  <pre><code>{`<Lumidot direction="ltr" />  // left to right (default)
+<Lumidot direction="rtl" />  // right to left
+<Lumidot direction="ttb" />  // top to bottom
+<Lumidot direction="btt" />  // bottom to top`}</code></pre>
+
+  <h2>Scale</h2>
+  <p>Control the size with a multiplier. Base size is 20px.</p>
+  <pre><code>{`<Lumidot scale={1} />  // 20px
+<Lumidot scale={2} />  // 40px
+<Lumidot scale={3} />  // 60px
+<Lumidot scale={5} />  // 100px`}</code></pre>
+
+  <h2>Glow</h2>
+  <p>Control the glow intensity around active dots.</p>
+  <pre><code>{`<Lumidot glow={0} />   // no glow
+<Lumidot glow={8} />   // subtle glow (default)
+<Lumidot glow={24} />  // strong glow`}</code></pre>
+
+  <h2>Duration</h2>
+  <p>Control the wave animation cycle speed in seconds.</p>
+  <pre><code>{`<Lumidot duration={0.3} />  // fast
+<Lumidot duration={0.7} />  // default
+<Lumidot duration={2} />    // slow`}</code></pre>
+
+  <h2>Accessibility</h2>
+  <p>The component includes <code>role="status"</code> and <code>aria-label="Loading"</code> by default. It also respects <code>prefers-reduced-motion</code> — when enabled, the wave animation is disabled and dots remain static.</p>
+
+  <h2>Ref Forwarding</h2>
+  <p>The component forwards refs to the root <code>&lt;span&gt;</code> element:</p>
+  <pre><code>{`const ref = useRef<HTMLSpanElement>(null);
+<Lumidot ref={ref} />`}</code></pre>
+
+  <h2>API Reference</h2>
+  <div class="overflow-x-auto">
+    <table>
+      <thead>
+        <tr>
+          <th class="text-left">Property</th>
+          <th class="text-center">Description</th>
+          <th class="text-right">Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>variant</td><td class="text-center">Named color variant from the palette (20 variants)</td><td class="text-right"><code>blue</code></td></tr>
+        <tr><td>pattern</td><td class="text-center">Named dot pattern for the 3x3 grid (36 patterns)</td><td class="text-right"><code>all</code></td></tr>
+        <tr><td>glow</td><td class="text-center">Glow intensity around active dots</td><td class="text-right"><code>8</code></td></tr>
+        <tr><td>scale</td><td class="text-center">Size multiplier (base 20px)</td><td class="text-right"><code>1</code></td></tr>
+        <tr><td>duration</td><td class="text-center">Wave animation cycle in seconds</td><td class="text-right"><code>0.7</code></td></tr>
+        <tr><td>direction</td><td class="text-center">Wave direction: <code>ltr</code>, <code>rtl</code>, <code>ttb</code>, <code>btt</code></td><td class="text-right"><code>ltr</code></td></tr>
+        <tr><td>className</td><td class="text-center">Additional CSS class names</td><td class="text-right">-</td></tr>
+        <tr><td>style</td><td class="text-center">Inline styles for the root element</td><td class="text-right">-</td></tr>
+        <tr><td>testId</td><td class="text-center">Sets <code>data-testid</code> for testing</td><td class="text-right">-</td></tr>
+      </tbody>
+    </table>
+  </div>
+</DocsLayout>

@@ -1,0 +1,31 @@
+@keyframes lumidot-wave {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.22;
+  }
+}
+
+[data-lumidot-dot] {
+  border-radius: 0;
+  transform-origin: center;
+  will-change: opacity, transform, box-shadow;
+}
+
+[data-lumidot-mode='wave'] [data-lumidot-dot-active='true'] {
+  animation: lumidot-wave var(--lumidot-duration, 0.7s) ease-in-out infinite;
+  animation-delay: var(--lumidot-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-lumidot-mode='wave'] [data-lumidot-dot-active='true'] {
+    animation: none;
+  }
+
+  [data-lumidot-dot] {
+    transition: none !important;
+    transform: none !important;
+  }
+}

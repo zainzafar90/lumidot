@@ -1,0 +1,22 @@
+---
+import DocsLayout from '../../layouts/docs-layout.astro';
+import Tabs from '../../components/Tabs.astro';
+---
+
+<DocsLayout title="Getting Started">
+  <h1>Getting Started</h1>
+  <p>Lumidot is a beautiful 3x3 dot-grid loader component for React.</p>
+
+  <h3>Install</h3>
+  <Tabs
+    items={['pnpm', 'npm', 'yarn', 'bun']}
+    contents={['pnpm i lumidot', 'npm i lumidot', 'yarn add lumidot', 'bun add lumidot']}
+  />
+
+  <h3>Render a loader</h3>
+  <pre><code>{`import { Lumidot } from 'lumidot';
+
+function MyLoader() {
+  return <Lumidot variant="blue" pattern="all" glow={8} />;
+}`}</code></pre>
+</DocsLayout>

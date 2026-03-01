@@ -1,0 +1,52 @@
+---
+import DocsLayout from '../../layouts/docs-layout.astro';
+---
+
+<DocsLayout title="Styling">
+  <h1>Styling</h1>
+
+  <h2>CSS Custom Properties</h2>
+  <p>Active dots use CSS custom properties for animation control:</p>
+  <pre><code>{`[data-lumidot-dot-active='true'] {
+  --lumidot-duration: 1.2s;
+  --lumidot-delay: 0.1s;
+}`}</code></pre>
+
+  <h2>className</h2>
+  <p>You can pass a <code>className</code> prop to add custom styles:</p>
+  <pre><code>{`<Lumidot className="my-loader" />`}</code></pre>
+
+  <h2>Data Attributes</h2>
+  <p>Lumidot uses data attributes for styling, making it easy to target specific states:</p>
+  <div class="overflow-x-auto">
+    <table>
+      <thead>
+        <tr>
+          <th class="text-left">Attribute</th>
+          <th class="text-left">Values</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>data-lumidot</code></td><td>Present on root element</td></tr>
+        <tr><td><code>data-lumidot-pattern</code></td><td><code>all</code>, <code>frame</code>, <code>corners-only</code>, <code>plus-hollow</code>, etc.</td></tr>
+        <tr><td><code>data-lumidot-variant</code></td><td><code>blue</code>, <code>purple</code>, <code>red</code>, <code>green</code>, etc.</td></tr>
+        <tr><td><code>data-lumidot-direction</code></td><td><code>ltr</code>, <code>rtl</code>, <code>ttb</code>, <code>btt</code></td></tr>
+        <tr><td><code>data-lumidot-mode</code></td><td><code>wave</code> or <code>sequence</code></td></tr>
+        <tr><td><code>data-lumidot-dot</code></td><td>Present on each dot element</td></tr>
+        <tr><td><code>data-lumidot-dot-active</code></td><td><code>true</code> or <code>false</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <pre><code>{`[data-lumidot-pattern="frame"] [data-lumidot-dot-active="true"] {
+  border-radius: 50%;
+}`}</code></pre>
+
+  <h2>Reduced Motion</h2>
+  <p>Lumidot respects <code>prefers-reduced-motion</code>. When enabled:</p>
+  <ul>
+    <li>The wave animation is disabled</li>
+    <li>Active dots remain visible but static</li>
+    <li>The grid layout is unaffected</li>
+  </ul>
+</DocsLayout>

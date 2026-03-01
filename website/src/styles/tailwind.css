@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    touch-action: manipulation;
+  }
+
+  ::selection {
+    @apply bg-zinc-300 dark:bg-zinc-700;
+  }
+
+  body {
+    @apply bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50 antialiased;
+  }
+}
+
+@layer components {
+  .prose pre {
+    @apply bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-none;
+  }
+
+  .prose code {
+    @apply font-mono text-[13px] text-zinc-900 dark:text-zinc-100;
+  }
+
+  .prose :not(pre) > code {
+    @apply px-1.5 py-0.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-none;
+  }
+
+  .prose table {
+    @apply w-full;
+  }
+
+  .prose th {
+    @apply text-zinc-950 dark:text-zinc-50 border-b border-zinc-200 dark:border-zinc-800;
+  }
+
+  .prose td {
+    @apply text-zinc-700 dark:text-zinc-300 border-b border-zinc-100 dark:border-zinc-800/50;
+  }
+
+  .prose thead {
+    @apply border-b border-zinc-200 dark:border-zinc-800;
+  }
+
+  .prose hr {
+    @apply border-zinc-200 dark:border-zinc-800;
+  }
+
+  .prose a {
+    @apply text-zinc-950 dark:text-zinc-50 underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2;
+  }
+
+  .prose strong {
+    @apply text-zinc-950 dark:text-zinc-50;
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply text-zinc-950 dark:text-zinc-50;
+  }
+
+  .prose p, .prose li {
+    @apply text-zinc-700 dark:text-zinc-300;
+  }
+}

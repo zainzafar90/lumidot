@@ -1,0 +1,58 @@
+---
+interface Props {
+  items: string[];
+  contents: string[];
+}
+
+const { items, contents } = Astro.props;
+---
+
+<div class="tabs-component not-prose mt-4" data-tabs>
+  <div class="flex border-b border-zinc-200 dark:border-zinc-800">
+    {items.map((item, i) => (
+      <button
+        class:list={[
+          'tab-btn font-mono text-[12px] px-4 py-2 transition-colors border-b-2 -mb-[1px]',
+          i === 0
+            ? 'border-zinc-950 dark:border-zinc-50 text-zinc-950 dark:text-zinc-50'
+            : 'border-transparent text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-50',
+        ]}
+        data-tab-index={i}
+      >
+        {item}
+      </button>
+    ))}
+  </div>
+  {contents.map((content, i) => (
+    <div
+      class:list={['tab-panel', i === 0 ? '' : 'hidden']}
+      data-panel-index={i}
+    >
+      <pre class="border border-t-0 border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 p-4 overflow-x-auto">
+        <code class="font-mono text-[13px] leading-relaxed text-zinc-950 dark:text-zinc-50">{content}</code>
+      </pre>
+    </div>
+  ))}
+</div>
+
+<script is:inline>
+  document.querySelectorAll('[data-tabs]').forEach(function (tabs) {
+    var btns = tabs.querySelectorAll('.tab-btn');
+    var panels = tabs.querySelectorAll('.tab-panel');
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = btn.getAttribute('data-tab-index');
+        btns.forEach(function (b) {
+          b.classList.remove('border-zinc-950', 'dark:border-zinc-50', 'text-zinc-950', 'dark:text-zinc-50');
+          b.classList.add('border-transparent', 'text-zinc-500');
+        });
+        btn.classList.add('border-zinc-950', 'dark:border-zinc-50', 'text-zinc-950', 'dark:text-zinc-50');
+        btn.classList.remove('border-transparent', 'text-zinc-500');
+        panels.forEach(function (p) {
+          p.classList.add('hidden');
+        });
+        tabs.querySelector('[data-panel-index="' + idx + '"]').classList.remove('hidden');
+      });
+    });
+  });
+</script>

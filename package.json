@@ -1,0 +1,67 @@
+{
+  "name": "lumidot",
+  "version": "0.5.0",
+  "description": "A 3x3 dot-grid loader for React, inspired by the RGB spinner animation",
+  "license": "MIT",
+  "author": {
+    "email": "zainzafar90@gmail.com",
+    "name": "Zain Zafar",
+    "url": "https://zainzafar.net"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "bunchee --watch",
+    "build": "bunchee --minify",
+    "type-check": "tsc --noEmit",
+    "dev:website": "turbo run dev --filter=website...",
+    "dev:test": "turbo run dev --filter=test...",
+    "format": "prettier --write .",
+    "test": "playwright test"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.3",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "bunchee": "^6.9.0",
+    "prettier": "^3.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "turbo": "1.6",
+    "typescript": "^5.6.0"
+  },
+  "keywords": [
+    "rgb",
+    "loader",
+    "ai",
+    "spinner",
+    "loading",
+    "animation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zainzafar90/lumidot"
+  }
+}
