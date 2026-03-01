@@ -1,6 +1,6 @@
 # lumidot
 
-A 3x3 dot-grid loader for React. 36 patterns, 20 colors, under 5KB.
+Dot-grid loading animations for React. Tiny, flexible, beautiful.
 
 ![lumidot](./lumidot.gif)
 

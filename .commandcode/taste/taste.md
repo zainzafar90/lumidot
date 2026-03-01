@@ -23,4 +23,4 @@
 - Prefer the bundler-based CSS import approach (e.g., `import './styles.css'` like sonner does) over manual `<style>` tag injection at runtime. Confidence: 0.70
 
 # workflow
-- Use pnpm as the package manager. Confidence: 0.80
+- Use pnpm as the package manager. Confidence: 0.90
