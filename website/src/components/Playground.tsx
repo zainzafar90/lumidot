@@ -72,7 +72,7 @@ export default function Playground() {
           </span>
         </h1>
         <p className="text-base text-zinc-500 leading-relaxed mx-4">
-          An x×y dot-grid loader for React. 36 patterns, 20 colors, under 5KB.
+          A 3x3 dot-grid loader for React. 36 patterns, 20 colors, under 5KB.
         </p>
         <button
           className="mt-6 inline-flex items-center gap-2 font-mono text-[13px] text-white dark:text-black dark:bg-zinc-100 bg-zinc-900 border dark:border-zinc-200 border-zinc-800 cursor-pointer px-5 py-2.5 transition-colors dark:hover:border-zinc-950 hover:border-zinc-50"

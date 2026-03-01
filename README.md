@@ -1,6 +1,6 @@
 # lumidot
 
-x×y dot-grid loading animations for React. Tiny, flexible, beautiful.
+Dot-grid loading animations for React. Tiny, flexible, beautiful.
 
 ![lumidot](./lumidot.gif)
 
