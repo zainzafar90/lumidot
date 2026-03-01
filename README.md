@@ -1,6 +1,6 @@
 # lumidot
 
-Dot-grid loading animations for React. Tiny, flexible, beautiful.
+x×y dot-grid loading animations for React. Tiny, flexible, beautiful.
 
 ![lumidot](./lumidot.gif)
 
@@ -13,26 +13,33 @@ npm install lumidot
 ## Usage
 
 ```tsx
-import { Lumidot } from 'lumidot'
+import { Lumidot } from 'lumidot';
 
 function App() {
-  return <Lumidot />
+  return (
+    <>
+      <Lumidot />
+      <Lumidot rows={5} cols={5} pattern="all" />
+    </>
+  );
 }
 ```
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `pattern` | `LumidotPattern` | `'all'` | Dot layout pattern (36 options) |
-| `variant` | `LumidotVariant` | `'blue'` | Color variant (20 options) |
-| `direction` | `LumidotDirection` | `'ltr'` | Wave direction — `'ltr'`, `'rtl'`, `'ttb'`, `'btt'` |
-| `scale` | `number` | `1` | Size multiplier (1 = 20px) |
-| `glow` | `number` | `8` | Glow intensity |
-| `duration` | `number` | `0.7` | Wave cycle duration in seconds |
-| `className` | `string` | — | Additional CSS classes |
-| `style` | `CSSProperties` | — | Inline styles |
-| `testId` | `string` | — | Sets `data-testid` attribute |
+| Prop        | Type               | Default  | Description                                         |
+| ----------- | ------------------ | -------- | --------------------------------------------------- |
+| `pattern`   | `LumidotPattern`   | `'all'`  | Dot layout pattern (36 options)                     |
+| `variant`   | `LumidotVariant`   | `'blue'` | Color variant (20 options)                          |
+| `rows`      | `number`           | `3`      | Number of rows in the dot grid                      |
+| `cols`      | `number`           | `3`      | Number of columns in the dot grid                   |
+| `direction` | `LumidotDirection` | `'ltr'`  | Wave direction — `'ltr'`, `'rtl'`, `'ttb'`, `'btt'` |
+| `scale`     | `number`           | `1`      | Size multiplier (1 = 20px)                          |
+| `glow`      | `number`           | `8`      | Glow intensity                                      |
+| `duration`  | `number`           | `0.7`    | Wave cycle duration in seconds                      |
+| `className` | `string`           | —        | Additional CSS classes                              |
+| `style`     | `CSSProperties`    | —        | Inline styles                                       |
+| `testId`    | `string`           | —        | Sets `data-testid` attribute                        |
 
 ## Patterns
 
