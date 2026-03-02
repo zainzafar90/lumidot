@@ -1,6 +1,6 @@
 {
   "name": "lumidot",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Dot-grid loading animations for React. Tiny, flexible, beautiful.",
   "license": "MIT",
   "author": {
