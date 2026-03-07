@@ -105,6 +105,10 @@ loader.color = 'rgb(255,136,0)'; // rgb
 
 **Other** &mdash; `spiral`, `all`
 
+## Related
+
+- [lumidot](https://www.npmjs.com/package/lumidot) — Same dot-grid animations for React
+
 ## License
 
 MIT

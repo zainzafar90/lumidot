@@ -73,6 +73,10 @@ The animation mode is determined automatically by the pattern:
 
 - Respects `prefers-reduced-motion` — animations are disabled when the user prefers reduced motion
 
+## Related
+
+- [lumiterm](https://www.npmjs.com/package/lumiterm) — Same dot-grid animations for the terminal (Node.js)
+
 ## License
 
 MIT
