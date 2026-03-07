@@ -2,6 +2,8 @@
 
 Dot-grid terminal loader with wave, spiral, and frame animations. Renders using braille characters with automatic ASCII fallback.
 
+![lumiterm](./lumiterm.gif)
+
 ## Install
 
 ```
