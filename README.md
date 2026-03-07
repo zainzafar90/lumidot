@@ -7,6 +7,10 @@ Inspiration credit goes to Kevin's post: https://x.com/k_grajeda/status/20092816
 
 ![lumidot](./lumidot.gif)
 
+## Demo
+
+Explore the live playground: **[lumidot.zainzafar.net](https://lumidot.zainzafar.net/)**
+
 ## Installation
 
 ```bash
