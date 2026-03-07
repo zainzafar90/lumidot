@@ -41,7 +41,7 @@ loader.start();
 | `color` | `string \| function` | `'blue'` | Any named color, hex (`'#FF8800'`), rgb (`'rgb(255,136,0)'`), or chalk function |
 | `text` | `string` | `''` | Text displayed next to the loader |
 | `rows` | `number` | `4` | Dot grid height |
-| `cols` | `number` | `8` | Dot grid width |
+| `cols` | `number` | `4` | Dot grid width |
 | `stream` | `WriteStream` | `process.stderr` | Output stream |
 
 ## API

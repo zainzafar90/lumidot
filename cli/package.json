@@ -1,6 +1,6 @@
 {
   "name": "lumiterm",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Dot-grid terminal spinner with wave, spiral, and frame animations.",
   "license": "MIT",
   "author": {

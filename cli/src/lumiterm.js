@@ -50,7 +50,7 @@ export class Lumiterm {
     this.#color   = resolveColor(options.color ?? 'blue');
     this.#text    = options.text    ?? '';
     this.#rows    = options.rows    ?? 4;
-    this.#cols    = options.cols    ?? 8;
+    this.#cols    = options.cols    ?? 4;
     this.#stream  = options.stream  ?? process.stderr;
 
     this.#rebuildCache();

@@ -4,7 +4,7 @@ import { lumiterm } from './index.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const s = lumiterm({ rows: 4, cols: 4, stream: process.stdout });
+const s = lumiterm({ stream: process.stdout });
 
 s.pattern = 'wave-lr'; s.color = 'blue';
 s.start('Reading codebase...');
