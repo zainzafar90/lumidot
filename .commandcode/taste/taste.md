@@ -17,6 +17,7 @@
 - Write code like a senior engineer — keep logic local to functions/methods rather than extracting to top-level constants when it reduces clarity. Confidence: 0.85
 - Refactor for readability and maintainability — code should be easy to understand, not spaghetti. Confidence: 0.85
 - Avoid duplicate config/style files — consolidate into a single file when two files serve the same purpose. Confidence: 0.80
+- Keep demo/example scripts simple and direct — just the core usage calls, no interactive modes, state machines, or keyboard handling unless explicitly needed. Confidence: 0.88
 
 # package
 - Inline CSS into the component bundle rather than shipping a separate styles.css file that consumers must import manually. Confidence: 0.80
@@ -24,3 +25,9 @@
 
 # workflow
 - Use pnpm as the package manager. Confidence: 0.90
+- When building multi-step features, implement in phases and wait for explicit approval before moving to the next phase (e.g., "first do X, then after approval do Y"). Confidence: 0.75
+
+# terminal-ui
+- Use braille characters for terminal spinner/animation dots — they are compact, fit on one line, and look visually brilliant. Confidence: 0.80
+- For terminal spinners, support per-dot fading/color variation so each dot animates independently rather than the whole row changing uniformly. Confidence: 0.75
+- For the lumiterm project, ship only `index.js` (plain JS library) and `index.d.ts` (types) — do not include a CLI bin tool. Confidence: 0.75

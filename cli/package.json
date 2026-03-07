@@ -1,0 +1,42 @@
+{
+  "name": "lumiterm",
+  "version": "0.9.0",
+  "description": "Dot-grid terminal spinner with wave, spiral, and frame animations.",
+  "license": "MIT",
+  "author": {
+    "email": "zainzafar90@gmail.com",
+    "name": "Zain Zafar",
+    "url": "https://zainzafar.net"
+  },
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "src/"
+  ],
+  "keywords": [
+    "lumiterm",
+    "terminal",
+    "spinner",
+    "animation",
+    "dot-grid",
+    "loading"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zainzafar90/lumidot"
+  },
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "cli-cursor": "^5.0.0",
+    "is-unicode-supported": "^2.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
+  }
+}
