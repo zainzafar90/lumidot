@@ -14,15 +14,23 @@ const DIRECTIONS: { label: string; value: LumidotDirection }[] = [
   { label: 'BTT', value: 'btt' },
 ];
 
+const CONTROL_DEFAULTS = {
+  rows: 3,
+  cols: 3,
+  scale: 1,
+  glow: 8,
+  duration: 0.7,
+} as const;
+
 export default function Playground() {
   const [dark, setDark] = useState(true);
   const [pattern, setPattern] = useState<LumidotPattern>('all');
   const [variant, setVariant] = useState<LumidotVariant>('blue');
-  const [rows, setRows] = useState(3);
-  const [cols, setCols] = useState(3);
-  const [scale, setScale] = useState(3);
-  const [glow, setGlow] = useState(8);
-  const [duration, setDuration] = useState(0.7);
+  const [rows, setRows] = useState(CONTROL_DEFAULTS.rows);
+  const [cols, setCols] = useState(CONTROL_DEFAULTS.cols);
+  const [scale, setScale] = useState(CONTROL_DEFAULTS.scale);
+  const [glow, setGlow] = useState(CONTROL_DEFAULTS.glow);
+  const [duration, setDuration] = useState(CONTROL_DEFAULTS.duration);
   const [direction, setDirection] = useState<LumidotDirection>('ltr');
   const [copied, setCopied] = useState('');
 
@@ -39,6 +47,21 @@ export default function Playground() {
     copy(text);
     setCopied(id);
     setTimeout(() => setCopied(''), 2000);
+  };
+
+  const controlsAreDefault =
+    rows === CONTROL_DEFAULTS.rows &&
+    cols === CONTROL_DEFAULTS.cols &&
+    scale === CONTROL_DEFAULTS.scale &&
+    glow === CONTROL_DEFAULTS.glow &&
+    duration === CONTROL_DEFAULTS.duration;
+
+  const resetControls = () => {
+    setRows(CONTROL_DEFAULTS.rows);
+    setCols(CONTROL_DEFAULTS.cols);
+    setScale(CONTROL_DEFAULTS.scale);
+    setGlow(CONTROL_DEFAULTS.glow);
+    setDuration(CONTROL_DEFAULTS.duration);
   };
 
   const codeParts: string[] = [];
@@ -189,6 +212,18 @@ export default function Playground() {
             </div>
 
             {/* Rows, Cols, Scale, Glow, Duration Sliders */}
+            <div className="flex items-center justify-between gap-4">
+              <span className={label}>Dimensions &amp; animation</span>
+              <button
+                type="button"
+                onClick={resetControls}
+                disabled={controlsAreDefault}
+                aria-label="Reset rows, columns, scale, glow, and duration to defaults"
+                className="font-mono text-[10px] px-2.5 py-1 border border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-500 cursor-pointer transition-all hover:border-zinc-950 hover:text-zinc-950 dark:hover:border-zinc-50 dark:hover:text-zinc-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-zinc-200 disabled:hover:text-zinc-500 dark:disabled:hover:border-zinc-800 dark:disabled:hover:text-zinc-500"
+              >
+                Reset defaults
+              </button>
+            </div>
             <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-5">
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-center">
